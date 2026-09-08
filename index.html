@@ -1,0 +1,1049 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SBA YOUTUBE MANAGEMENT Team</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07070b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    background:rgba(7,7,11,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:1000;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#ff1744;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff1744;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    position:relative;
+    overflow:hidden;
+}
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#ff1744;
+    filter:blur(160px);
+    opacity:.16;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:950px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border:1px solid rgba(255,23,68,.5);
+    border-radius:50px;
+    color:#ff5270;
+    background:rgba(255,23,68,.08);
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,90px);
+    line-height:1;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff1744;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+    line-height:1.7;
+    max-width:720px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:#ff1744;
+    color:white;
+    box-shadow:0 10px 30px rgba(255,23,68,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 40px rgba(255,23,68,.4);
+}
+
+.btn-outline{
+    border:1px solid #333;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    border-color:#ff1744;
+    color:#ff1744;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:#ff1744;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:12px;
+}
+
+.section-title p{
+    color:#888;
+    margin-top:15px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:#0b0b10;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    padding:32px;
+    background:linear-gradient(145deg,#121218,#0d0d12);
+    border:1px solid #1d1d26;
+    border-radius:18px;
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    border-color:#ff1744;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.icon{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,23,68,.1);
+    color:#ff1744;
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.service-card h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.service-card p{
+    color:#888;
+    line-height:1.7;
+    flex:1;
+}
+
+.order-btn{
+    margin-top:25px;
+    text-align:center;
+    padding:12px;
+    border-radius:7px;
+    background:#ff1744;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#e60035;
+    transform:translateY(-2px);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.stat{
+    padding:35px 15px;
+    border:1px solid #1d1d26;
+    border-radius:15px;
+    background:#0c0c11;
+}
+
+.stat h3{
+    color:#ff1744;
+    font-size:38px;
+}
+
+.stat p{
+    color:#888;
+    margin-top:8px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:45px;
+    margin:15px 0;
+}
+
+.about h2 span{
+    color:#ff1744;
+}
+
+.about p{
+    color:#999;
+    line-height:1.8;
+}
+
+.features{
+    margin-top:25px;
+}
+
+.feature{
+    display:flex;
+    gap:12px;
+    margin:15px 0;
+    color:#ddd;
+}
+
+.feature b{
+    color:#ff1744;
+}
+
+/* ================= WHY US ================= */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.why-card{
+    padding:30px;
+    border:1px solid #1d1d26;
+    border-radius:16px;
+    background:#0d0d12;
+}
+
+.why-card h3{
+    margin-bottom:12px;
+}
+
+.why-card p{
+    color:#888;
+    line-height:1.7;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+    background:#0b0b10;
+}
+
+.contact-box{
+    max-width:850px;
+    margin:auto;
+    padding:55px 35px;
+    border:1px solid #222;
+    border-radius:20px;
+    background:linear-gradient(145deg,#121218,#09090d);
+}
+
+.contact-box h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#888;
+    line-height:1.7;
+}
+
+.contact-info{
+    margin:30px 0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.contact-info span{
+    padding:12px 18px;
+    border-radius:8px;
+    background:#15151c;
+    color:#ccc;
+}
+
+.whatsapp-group{
+    margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 7%;
+    text-align:center;
+    color:#666;
+    border-top:1px solid #16161d;
+    line-height:1.8;
+}
+
+footer .developer{
+    color:#aaa;
+}
+
+footer .developer span{
+    color:#ff1744;
+    font-weight:bold;
+}
+
+/* ================= FLOATING WHATSAPP ================= */
+
+.whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:28px;
+    z-index:999;
+    box-shadow:0 8px 25px rgba(37,211,102,.35);
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+}
+
+@media(max-width:600px){
+
+    .service-grid,
+    .why-grid,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .about h2{
+        font-size:35px;
+    }
+
+    .contact-box{
+        padding:40px 20px;
+    }
+
+    .contact-box h2{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+    <div class="logo">
+        <span>SBA</span> YOUTUBE
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="glow"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🚀 PROFESSIONAL YOUTUBE MANAGEMENT TEAM
+        </div>
+
+        <h1>
+            SBA <span>YOUTUBE</span><br>
+            MANAGEMENT
+        </h1>
+
+        <p>
+            Professional YouTube management, channel growth,
+            SEO, content strategy and monetization support
+            for creators and brands full support from our team.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#services" class="btn btn-primary">
+                View Services
+            </a>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="btn btn-outline">
+                💬 WhatsApp Us
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <small>OUR SERVICES</small>
+
+        <h2>YouTube Services</h2>
+
+        <p>
+            Professional solutions to help manage and grow your YouTube channel.
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <!-- SERVICE 1 -->
+        <div class="service-card">
+
+            <div class="icon">▶</div>
+
+            <h3>4,000 Watch Hours Support</h3>
+
+            <p>
+                Channel strategy and content optimization
+                designed to help creators work toward YouTube
+                monetization requirements.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 2 -->
+        <div class="service-card">
+
+            <div class="icon">👥</div>
+
+            <h3>1,000 Subscriber Growth</h3>
+
+            <p>
+                Organic audience growth strategies focused
+                on attracting relevant viewers and building
+                a real subscriber community.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 3 -->
+        <div class="service-card">
+
+            <div class="icon">🔍</div>
+
+            <h3>YouTube SEO</h3>
+
+            <p>
+                Video titles, descriptions, keywords,
+                metadata and channel optimization.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 4 -->
+        <div class="service-card">
+
+            <div class="icon">🎬</div>
+
+            <h3>Content Strategy</h3>
+
+            <p>
+                Professional content planning based on
+                audience interests, trends and channel analytics.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 5 -->
+        <div class="service-card">
+
+            <div class="icon">🖼️</div>
+
+            <h3>Thumbnail Strategy</h3>
+
+            <p>
+                High-impact thumbnail concepts designed
+                to improve impressions and click-through rates.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 6 -->
+        <div class="service-card">
+
+            <div class="icon">📊</div>
+
+            <h3>YouTube Analytics</h3>
+
+            <p>
+                Analyze views, retention, CTR, audience data
+                and channel performance to improve future content.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 7 -->
+        <div class="service-card">
+
+            <div class="icon">💰</div>
+
+            <h3>Monetization Guidance</h3>
+
+            <p>
+                Guidance for YouTube monetization preparation,
+                channel optimization and sustainable growth.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 8 -->
+        <div class="service-card">
+
+            <div class="icon">📱</div>
+
+            <h3>YouTube Shorts Growth</h3>
+
+            <p>
+                Shorts content strategy, optimization and
+                audience growth planning.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 9 -->
+        <div class="service-card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Complete Channel Management</h3>
+
+            <p>
+                End-to-end channel management including
+                publishing, optimization, strategy and analytics.
+            </p>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Order Service →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>WHY SBA</small>
+
+        <h2>Built For YouTube Growth</h2>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>24/7</h3>
+            <p>Support</p>
+        </div>
+
+        <div class="stat">
+            <h3>SEO</h3>
+            <p>Optimization</p>
+        </div>
+
+        <div class="stat">
+            <h3>DATA</h3>
+            <p>Driven Strategy</p>
+        </div>
+
+        <div class="stat">
+            <h3>∞</h3>
+            <p>Creative Ideas</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div>
+
+            <small style="
+                color:#ff1744;
+                font-weight:bold;
+                letter-spacing:2px;
+            ">
+                ABOUT SBA
+            </small>
+
+            <h2>
+                Your Channel.<br>
+                Our <span>Strategy.</span>
+            </h2>
+
+            <p>
+                SBA YOUTUBE MANAGEMENT Team helps creators
+                and brands improve their YouTube presence through
+                professional channel management, SEO, content
+                strategy and analytics.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <b>✓</b>
+                    Professional channel management
+                </div>
+
+                <div class="feature">
+                    <b>✓</b>
+                    YouTube SEO optimization
+                </div>
+
+                <div class="feature">
+                    <b>✓</b>
+                    Content and growth strategy
+                </div>
+
+                <div class="feature">
+                    <b>✓</b>
+                    Analytics and performance support
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Let's Grow Together</h3>
+
+            <p>
+                Ready to improve your YouTube channel?
+                Contact our team and discuss your requirements.
+            </p>
+
+            <br>
+
+            <a href="https://wa.link/tng0et"
+               target="_blank"
+               class="order-btn">
+                Chat on WhatsApp →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>OUR ADVANTAGES</small>
+
+        <h2>Why Choose SBA?</h2>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Focused Strategy</h3>
+
+            <p>
+                We focus on the right audience, content
+                and optimization strategy for your channel.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">📈</div>
+
+            <h3>Growth Mindset</h3>
+
+            <p>
+                Every decision is made with long-term
+                channel growth and performance in mind.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Personal Support</h3>
+
+            <p>
+                Get direct communication with our team
+                whenever you need assistance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2>Let's Work Together 🚀</h2>
+
+        <p>
+            Have a YouTube project or need help managing
+            your channel? Contact SBA YOUTUBE MANAGEMENT Team.
+        </p>
+
+        <div class="contact-info">
+
+            <span>
+                📱 WhatsApp: +977 9821590207
+            </span>
+
+            <span>
+                📞 Direct: +977 9828436593
+            </span>
+
+            <span>
+                📍 321
+            </span>
+
+        </div>
+
+        <a href="https://wa.link/tng0et"
+           target="_blank"
+           class="btn btn-primary">
+            💬 Contact on WhatsApp
+        </a>
+
+        <div class="whatsapp-group">
+
+            <!-- WhatsApp Group Link yahan baad mein add kar sakte ho -->
+            <a href="#"
+               class="btn btn-outline"
+               onclick="alert('WhatsApp Group link will be added soon!')">
+                👥 Join WhatsApp Group
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        © 2026
+        <span style="color:#ff1744;font-weight:bold;">
+            SBA YOUTUBE MANAGEMENT Team
+        </span>
+        — All Rights Reserved.
+    </div>
+
+    <div class="developer">
+        Web Developed By
+        <span>Bishal</span> ❤️
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a href="https://wa.link/tng0et"
+   target="_blank"
+   class="whatsapp-float"
+   title="Chat on WhatsApp">
+
+    💬
+
+</a>
+
+</body>
+</html>
+```
